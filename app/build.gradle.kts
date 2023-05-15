@@ -1,7 +1,9 @@
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    alias(libs.plugins.androidApplication)
-    alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.hilt.plugin)
 }
 
 android {
@@ -37,6 +39,9 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":domain"))
     implementation(project(":presentation"))
+
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)

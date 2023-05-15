@@ -1,7 +1,10 @@
 @Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    alias(libs.plugins.androidLibrary)
-    alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.kapt)
+    alias(libs.plugins.kotlin.serialization)
+    alias(libs.plugins.hilt.plugin)
 }
 
 android {
@@ -35,5 +38,19 @@ android {
 
 dependencies {
     implementation(project(":domain"))
+
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.kotlinx.serialization.conveter)
+    implementation(libs.okhttp)
+    implementation(libs.logging.interceptor)
+
+    implementation(libs.bundles.kotlinx.coroutines)
+    implementation(libs.kotlinx.serialization.json)
+
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+
+
+
 
 }
