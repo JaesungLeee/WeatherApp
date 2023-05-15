@@ -15,8 +15,8 @@ jobs:
     steps:
       # 레포지토리 접근을 위한 checkout
       - uses: actions/checkout@v3
-          with:
-            fetch-depth: 0
+        with:
+          fetch-depth: 0
 
       # 빌드를 위한 셋업
       - name: set up JDK 11
@@ -41,8 +41,8 @@ jobs:
 
       # gradle 권한 부여
       - name: Grant execute permission for gradlew
-          run: chmod +x gradlew
+        run: chmod +x gradlew
 
       # 최종 빌드
       - name: Build with Gradle
-          run: ./gradlew app:assembleDebug
+        run: ./gradlew app:assembleDebug
