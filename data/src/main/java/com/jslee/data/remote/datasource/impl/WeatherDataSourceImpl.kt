@@ -2,6 +2,7 @@ package com.jslee.data.remote.datasource.impl
 
 import com.jslee.data.remote.datasource.WeatherDataSource
 import com.jslee.data.remote.dto.CurrentWeatherResponse
+import com.jslee.data.remote.dto.ForecastResponse
 import com.jslee.data.remote.service.WeatherService
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -25,4 +26,12 @@ internal class WeatherDataSourceImpl @Inject constructor(
         }.getOrNull()
     }
 
+    override fun getWeatherForecast(
+        latitude: Double,
+        longitude: Double
+    ): Flow<ForecastResponse> = flow {
+        runCatching {
+            weatherService.getForecast(latitude = latitude, longitude = longitude)
+        }.getOrNull()
+    }
 }

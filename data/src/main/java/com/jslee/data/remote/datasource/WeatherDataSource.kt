@@ -1,6 +1,7 @@
 package com.jslee.data.remote.datasource
 
 import com.jslee.data.remote.dto.CurrentWeatherResponse
+import com.jslee.data.remote.dto.ForecastResponse
 import kotlinx.coroutines.flow.Flow
 
 /**
@@ -11,4 +12,6 @@ import kotlinx.coroutines.flow.Flow
 internal interface WeatherDataSource {
 
     fun getCurrentWeather(latitude: Double, longitude: Double): Flow<CurrentWeatherResponse>
+
+    fun getWeatherForecast(latitude: Double, longitude: Double): Flow<ForecastResponse>
 }
