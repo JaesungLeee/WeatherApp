@@ -1,6 +1,7 @@
 package com.jslee.data.di
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import com.jslee.data.remote.service.GeocodingService
 import com.jslee.data.remote.service.WeatherService
 import dagger.Module
 import dagger.Provides
@@ -68,4 +69,9 @@ internal class NetworkModule {
     @Singleton
     fun provideWeatherService(retrofit: Retrofit): WeatherService =
         retrofit.create(WeatherService::class.java)
+
+    @Provides
+    @Singleton
+    fun provideGeocodingService(retrofit: Retrofit): GeocodingService =
+        retrofit.create(GeocodingService::class.java)
 }
