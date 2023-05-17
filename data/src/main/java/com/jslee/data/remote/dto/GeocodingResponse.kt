@@ -1,5 +1,6 @@
 package com.jslee.data.remote.dto
 
+import com.jslee.domain.model.LocationCoordinate
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -21,6 +22,8 @@ internal data class GeocodingResponse(
     val longitude: Double = 0.0,
     @SerialName("country")
     val country: String = "",
+    @SerialName("state")
+    val state: String? = "",
 ) {
     @Serializable
     data class LocalNamesResponse(
@@ -28,5 +31,11 @@ internal data class GeocodingResponse(
         val nameKr: String = "",
         @SerialName("en")
         val nameEn: String = "",
+    )
+
+    fun toDomain(): LocationCoordinate = LocationCoordinate(
+        locationName = name,
+        latitude = latitude,
+        longitude = longitude,
     )
 }
