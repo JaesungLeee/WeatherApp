@@ -21,7 +21,7 @@ android {
         buildConfigField(
             "String",
             "API_KEY",
-            gradleLocalProperties(rootDir).getProperty("OPENWEATHERMAP_API_KEY")
+            gradleLocalProperties(rootDir).getProperty("OPENWEATHERMAP_API_KEY"),
         )
     }
 

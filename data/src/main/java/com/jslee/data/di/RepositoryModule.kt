@@ -25,5 +25,4 @@ internal abstract class RepositoryModule {
     @Binds
     @ViewModelScoped
     abstract fun bindGeocodingRepository(geocodingRepositoryImpl: GeocodingRepositoryImpl): GeocodingRepository
-
 }
