@@ -23,5 +23,5 @@ data class Sys(
     @SerialName("sunset")
     val sunset: Int? = 0,
     @SerialName("pod")
-    val dayNight: String? = "" // d: Day | n: Night
+    val dayNight: String? = "", // d: Day | n: Night
 )

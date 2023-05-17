@@ -5,6 +5,4 @@ package com.jslee.domain.repository
  * @author jaesung
  * @created 2023/05/16
  */
-interface WeatherRepository {
-
-}
+interface WeatherRepository

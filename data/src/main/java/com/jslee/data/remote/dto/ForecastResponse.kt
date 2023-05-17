@@ -45,7 +45,7 @@ internal data class ForecastResponse(
         @SerialName("sys")
         val sys: Sys = Sys(),
         @SerialName("dt_txt")
-        val dateTimeText: String = ""
+        val dateTimeText: String = "",
     )
 
     @Serializable

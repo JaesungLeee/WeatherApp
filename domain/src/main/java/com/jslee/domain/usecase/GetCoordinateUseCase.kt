@@ -11,7 +11,7 @@ import javax.inject.Inject
  * @created 2023/05/17
  */
 class GetCoordinateUseCase @Inject constructor(
-    private val geocodingRepository: GeocodingRepository
+    private val geocodingRepository: GeocodingRepository,
 ) {
     operator fun invoke(query: String): Flow<List<LocationCoordinate>> =
         geocodingRepository.getLocationName(query = query)

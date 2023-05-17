@@ -3,7 +3,6 @@ package com.jslee.data.remote.service
 import com.jslee.data.BuildConfig
 import com.jslee.data.remote.dto.CurrentWeatherResponse
 import com.jslee.data.remote.dto.ForecastResponse
-import com.jslee.data.remote.dto.GeocodingResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 

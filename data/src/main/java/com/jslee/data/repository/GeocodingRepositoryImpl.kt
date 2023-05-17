@@ -13,7 +13,7 @@ import javax.inject.Inject
  * @created 2023/05/17
  */
 internal class GeocodingRepositoryImpl @Inject constructor(
-    private val geocodingDataSource: GeocodingDataSource
+    private val geocodingDataSource: GeocodingDataSource,
 ) : GeocodingRepository {
 
     override fun getLocationName(query: String): Flow<List<LocationCoordinate>> = flow {

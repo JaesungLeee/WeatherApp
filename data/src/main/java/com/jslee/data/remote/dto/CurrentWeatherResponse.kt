@@ -41,6 +41,4 @@ internal data class CurrentWeatherResponse(
     val name: String = "",
     @SerialName("cod")
     val code: Int,
-) {
-
-}
+)

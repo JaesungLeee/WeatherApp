@@ -13,11 +13,9 @@ import javax.inject.Inject
  * @created 2023/05/16
  */
 internal class GeocodingDataSourceImpl @Inject constructor(
-    private val geocodingService: GeocodingService
+    private val geocodingService: GeocodingService,
 ) : GeocodingDataSource {
-    override fun getLocationName(
-        query: String
-    ): Flow<List<GeocodingResponse>> = flow {
+    override fun getLocationName(query: String): Flow<List<GeocodingResponse>> = flow {
         runCatching {
             geocodingService.getLocationName(query = "$query, KR")
         }.getOrDefault(emptyList())

@@ -19,7 +19,7 @@ internal class WeatherDataSourceImpl @Inject constructor(
 
     override fun getCurrentWeather(
         latitude: Double,
-        longitude: Double
+        longitude: Double,
     ): Flow<CurrentWeatherResponse> = flow {
         runCatching {
             weatherService.getCurrentWeather(latitude = latitude, longitude = longitude)
@@ -28,7 +28,7 @@ internal class WeatherDataSourceImpl @Inject constructor(
 
     override fun getWeatherForecast(
         latitude: Double,
-        longitude: Double
+        longitude: Double,
     ): Flow<ForecastResponse> = flow {
         runCatching {
             weatherService.getForecast(latitude = latitude, longitude = longitude)

@@ -11,6 +11,4 @@ import javax.inject.Inject
  */
 internal class WeatherRepositoryImpl @Inject constructor(
     private val weatherDataSource: WeatherDataSource,
-) : WeatherRepository {
-
-}
+) : WeatherRepository
